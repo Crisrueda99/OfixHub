@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 50px;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #008cba;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Botón de menú para móviles */
+.toggle-nav {
+    display: none; /* Se oculta en pantallas grandes */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Footer fijo */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Botón en el footer para pantallas pequeñas */
+.footer-btn {
+    display: none;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    nav {
+        display: none; /* Ocultar el nav por defecto */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .toggle-nav {
+        display: block; /* Mostrar el botón de menú */
+    }
+
+    footer p {
+        display: none; /* Ocultar el texto del footer */
+    }
+
+    .footer-btn {
+        display: block; /* Mostrar el botón de footer */
+    }
+}
+
+
+
+
+/* Sección principal */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f4f4f4;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin: 15px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+
+/* Contenedor de las tarjetas */
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Define un ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.box h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.box p {
+    color: #666;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+.section-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Asegura que el menú solo se muestre cuando sea necesario */
+#barnav {
+    display: none;
+}
+
+#barnav.visible {
+    display: block;
+}
