@@ -12,7 +12,7 @@
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
             ],
-            "url": "c:\\Users\\Crisrueda99\\.vscode\\extensions\\ms-edgedevtools.vscode-edge-devtools-2.1.8\\out\\startpage\\index.html",
+            "url": "c:\\OfixHub\\index.html",
             "presentation": {
                 "hidden": true
             }
