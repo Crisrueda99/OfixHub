@@ -78,10 +78,6 @@ body {
     margin-bottom: 10px;
 }
 
-.box p {
-    color: #388e3c;
-}
-
 .btn {
     display: inline-block;
     background-color: #008cba;
@@ -96,43 +92,6 @@ body {
 
 .btn:hover {
     background-color: #005f7f;
-}
-
-/* Estilos del footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #1b5e20;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-    padding-left: 15px;
-}
-
-/* Botón de WhatsApp */
-.whatsapp {
-    display: inline-block;
-    background-color: #25D366;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background 0.3s;
-    margin-right: 15px;
-}
-
-.whatsapp:hover {
-    background-color: #1ebe5d;
 }
 
 /* Responsive */
@@ -158,15 +117,6 @@ footer p {
     }
 
     .barnav ul li {
-        margin: 10px 0;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .whatsapp {
         margin: 10px 0;
     }
 }

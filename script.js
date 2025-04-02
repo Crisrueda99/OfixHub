@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const barnav = document.getElementById("barnav");
     const navLinks = barnav.querySelectorAll("a");
 
-    // Función para mostrar u ocultar la barra de navegación
+    // Función para mostrar/ocultar la barra de navegación
     toggleNav.addEventListener("click", function () {
         barnav.classList.toggle("visible");
     });
 
-    // Cerrar el menú al hacer clic en un enlace (solo en móviles)
+    // Cerrar el menú en móviles cuando se haga clic en un enlace
     navLinks.forEach(link => {
         link.addEventListener("click", function () {
             if (window.innerWidth <= 768) {
@@ -26,12 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Ejecutar al cargar la página y cuando la pantalla cambie de tamaño
     ajustarNav();
     window.addEventListener("resize", ajustarNav);
 
     // Función para cargar contenido dinámico
-    function cargarContenido(pagina) {
+    window.cargarContenido = function (pagina) {
         fetch(pagina)
             .then(response => {
                 if (!response.ok) {
@@ -41,19 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 document.getElementById("contenido").innerHTML = data;
-                window.scrollTo(0, 0); // Desplazar hacia arriba al cargar nuevo contenido
+                window.scrollTo(0, 0);
             })
             .catch(error => console.error("Error al cargar el contenido:", error));
-    }
-
-    // Asignar la función de carga de contenido a los enlaces del navbar
-    navLinks.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            const pagina = this.getAttribute("onclick");
-            if (pagina) {
-                cargarContenido(pagina.replace("cargarContenido('", "").replace("')", ""));
-            }
-        });
-    });
+    };
 });
