@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,49 +5,69 @@ html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos Multimedia</title>
     <style>
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
+            padding-top: 50px;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
         }
+        
+        /* Estilos del header */
         header {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 20px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
         }
+        
         header h1 {
             margin: 0;
             font-size: 2.5em;
         }
+        
         @media (max-width: 600px) {
             header h1 {
                 font-size: 1.8em;
             }
         }
+        
+        /* Estilos del slider */
         .slider-container {
             position: relative;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 100px auto 20px;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+        
         .slider {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            width: 100%;
         }
+        
         .slide {
             min-width: 100%;
             box-sizing: border-box;
             position: relative;
         }
+        
         .slide img {
             width: 100%;
             height: auto;
             display: block;
+            max-height: 450px;
+            object-fit: cover;
         }
+        
         .slide-content {
             position: absolute;
             bottom: 20px;
@@ -57,15 +76,19 @@ html
             background: rgba(0, 0, 0, 0.6);
             padding: 10px 20px;
             border-radius: 5px;
+            text-align: left;
         }
+        
         .slide-content h2 {
             margin: 0;
             font-size: 1.5em;
         }
+        
         .slide-content p {
             margin: 5px 0 0;
             font-size: 1em;
         }
+        
         @media (max-width: 600px) {
             .slide-content h2 {
                 font-size: 1.2em;
@@ -74,11 +97,13 @@ html
                 font-size: 0.9em;
             }
         }
+        
         .slider-controls {
             display: flex;
             justify-content: center;
             margin-top: 10px;
         }
+        
         .slider-controls button {
             background: none;
             border: none;
@@ -87,15 +112,21 @@ html
             color: #007BFF;
             margin: 0 10px;
         }
+        
         .slider-controls button:hover {
             color: #0056b3;
         }
+        
+        /* Estilos del footer */
         footer {
             text-align: center;
             padding: 10px 0;
             background-color: #333;
             color: #fff;
             margin-top: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -103,31 +134,33 @@ html
     <header>
         <h1>Proyectos de Electrónica</h1>
     </header>
+    
     <div class="slider-container">
         <div class="slider" id="slider">
             <div class="slide">
-                <img src="/src/Desert.png" alt="Proyecto 1">
+                <!-- Reemplaza estas rutas con las correctas -->
+                <img src="https://github.com/Crisrueda99/OfixHub/blob/main/src/Desert.png?raw=true" alt="Proyecto 1">
                 <div class="slide-content">
                     <h2>Leasing</h2>
                     <p>Creacion y edicion de archivos multimedia</p>
                 </div>
             </div>
             <div class="slide">
-                <img src="/src/Character.png" alt="Proyecto 2">
+                <img src="https://via.placeholder.com/800x450?text=Proyecto+2" alt="Proyecto 2">
                 <div class="slide-content">
                     <h2>Sensor de Temperatura</h2>
                     <p>Monitoreo en tiempo real con LM35.</p>
                 </div>
             </div>
             <div class="slide">
-                <img src="/src/Scene.png" alt="Proyecto 3">
+                <img src="https://via.placeholder.com/800x450?text=Proyecto+3" alt="Proyecto 3">
                 <div class="slide-content">
                     <h2>Robot Móvil</h2>
                     <p>Robot controlado por Bluetooth.</p>
                 </div>
             </div>
             <div class="slide">
-                <img src="/src/Profile.png" alt="Proyecto 3">
+                <img src="https://via.placeholder.com/800x450?text=Proyecto+4" alt="Proyecto 4">
                 <div class="slide-content">
                     <h2>Robot Móvil</h2>
                     <p>Robot controlado por Bluetooth.</p>
@@ -139,29 +172,46 @@ html
             <button onclick="nextSlide()">&#10095;</button>
         </div>
     </div>
+    
     <footer>
         &copy; 2023 Proyectos de Electrónica. Todos los derechos reservados.
     </footer>
+    
     <script>
         let currentIndex = 0;
+        const slider = document.getElementById('slider');
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
-
+        
+        // Inicializar el slider
+        function initSlider() {
+            slider.style.width = `${totalSlides * 100}%`;
+            slides.forEach(slide => {
+                slide.style.width = `${100 / totalSlides}%`;
+            });
+            updateSlider();
+        }
+        
         function nextSlide() {
             currentIndex = (currentIndex + 1) % totalSlides;
             updateSlider();
         }
-
+        
         function prevSlide() {
             currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
             updateSlider();
         }
-
+        
         function updateSlider() {
-            const slider = document.getElementById('slider');
-            const offset = -currentIndex * 100;
+            const offset = -currentIndex * (100 / totalSlides);
             slider.style.transform = `translateX(${offset}%)`;
         }
+        
+        // Inicializar el slider cuando el DOM esté cargado
+        document.addEventListener('DOMContentLoaded', initSlider);
+        
+        // Cambio automático de slides cada 5 segundos
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
