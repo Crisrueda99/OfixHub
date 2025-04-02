@@ -1,6 +1,83 @@
-        <h2>Contacto</h2>
-        <p>Puedes comunicarte con nosotros en...</p>
-   
- 
-    
-    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contacto-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .mapa {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .redes-sociales a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #008cba;
+        }
+        .whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .formulario input, .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .formulario button {
+            background-color: #008cba;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="contacto-container">
+        <h1>Contacto</h1>
+        <p>Ponte en contacto con nosotros a través del siguiente formulario o por nuestras redes sociales.</p>
+        
+        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.8439922558415!2d-122.08385168469234!3d37.42199997982592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDI1JzE5LjIiTiAxMjLCsDA1JzAwLjAiVw!5e0!3m2!1ses-419!2s!4v1619934981234" allowfullscreen="" loading="lazy"></iframe>
+        
+        <h2>Formulario de Contacto</h2>
+        <form class="formulario">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <textarea placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        
+        <a href="https://wa.me/1234567890" class="whatsapp">Chatear por WhatsApp</a>
+        
+        <div class="redes-sociales">
+            <a href="#" target="_blank">🔵 Facebook</a>
+            <a href="#" target="_blank">📸 Instagram</a>
+            <a href="#" target="_blank">🐦 Twitter</a>
+            <a href="#" target="_blank">🎥 YouTube</a>
+        </div>
+    </div>
+</body>
+</html>
