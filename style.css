@@ -1,14 +1,29 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 50px;
+    padding-top: 60px;
     text-align: center;
     background-color: #eaf4ea;
     color: #2c3e50;
 }
 
-/* Estilos para la barra de navegación */
-nav {
+/* Botón de menú para móviles */
+.toggle-nav {
+    display: none;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+}
+
+/* Barra de navegación */
+.barnav {
     background-color: #2e7d32;
     padding: 10px;
     position: fixed;
@@ -18,7 +33,7 @@ nav {
     z-index: 1000;
 }
 
-nav ul {
+.barnav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -26,70 +41,60 @@ nav ul {
     justify-content: center;
 }
 
-nav ul li {
+.barnav ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
+.barnav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
-/* Contenedor de contacto */
-.contacto-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    text-align: center;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.mapa-container {
-    margin: 20px 0;
-}
-
-.mapa {
-    width: 100%;
-    height: 300px;
-    border-radius: 10px;
-}
-
-.redes-sociales {
+/* Estilos para tarjetas de contenido */
+.content {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 20px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.redes-sociales a {
-    text-decoration: none;
-    font-size: 24px;
-    color: #008cba;
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
 }
 
-/* Formulario */
-.formulario input, .formulario textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.box h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
 }
 
-.formulario button {
+.box p {
+    color: #388e3c;
+}
+
+.btn {
+    display: inline-block;
     background-color: #008cba;
     color: white;
     padding: 10px 15px;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
     transition: background 0.3s;
 }
 
-.formulario button:hover {
+.btn:hover {
     background-color: #005f7f;
 }
 
@@ -130,54 +135,37 @@ footer p {
     background-color: #1ebe5d;
 }
 
-/* Sección de tarjetas */
-.content {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px 20px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: center;
-    flex: 1;
-    min-width: 250px;
-}
-
-.box h2 {
-    color: #2e7d32;
-    margin-bottom: 10px;
-}
-
-.box p {
-    color: #388e3c;
-}
-
 /* Responsive */
 @media screen and (max-width: 768px) {
-    nav {
+    .toggle-nav {
+        display: block;
+    }
+
+    .barnav {
         display: none;
         flex-direction: column;
         align-items: center;
     }
-    nav ul {
+
+    .barnav.visible {
+        display: flex;
+    }
+
+    .barnav ul {
         flex-direction: column;
+        text-align: center;
+        width: 100%;
     }
-    .toggle-nav {
-        display: block;
+
+    .barnav ul li {
+        margin: 10px 0;
     }
+
     footer {
         flex-direction: column;
         text-align: center;
     }
+
     .whatsapp {
         margin: 10px 0;
     }
