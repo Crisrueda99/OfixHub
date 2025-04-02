@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const toggleNav = document.getElementById("toggleNav");
     const barnav = document.getElementById("barnav");
-    const navLinks = barnav.querySelectorAll("a"); 
+    const navLinks = barnav.querySelectorAll("a");
 
     // Función para mostrar u ocultar el menú en móviles
     toggleNav.addEventListener("click", function () {
@@ -32,9 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Funcionalidad del botón en el footer
     const footerBtn = document.getElementById("footerBtn");
-    footerBtn.addEventListener("click", function () {
-        alert("¡Contáctanos al correo: contacto@mipagina.com!");
-    });
+    if (footerBtn) {
+        footerBtn.addEventListener("click", function () {
+            alert("¡Contáctanos al correo: contacto@mipagina.com!");
+        });
+    }
 });
 
 // Función para cargar contenido dinámico

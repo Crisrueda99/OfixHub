@@ -5,77 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OfixHub</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-
     <!-- Botón para mostrar/ocultar la barra de navegación en pantallas pequeñas -->
     <button id="toggleNav" class="toggle-nav">☰ Menú</button>
 
-    <!-- Barra de navegacion -->
-<nav id="barnav">
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#" onclick="cargarContenido('nosotros.html')">Sobre Nosotros</a></li>
-        <li><a href="#" onclick="cargarContenido('servicios.html')">Servicios</a></li>
-        <li><a href="#" onclick="cargarContenido('contacto.html')">Contacto</a></li>
-    </ul>
-</nav>
+    <!-- Barra de navegación -->
+    <nav id="barnav" class="barnav">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#" onclick="cargarContenido('nosotros.html')">Sobre Nosotros</a></li>
+            <li><a href="#" onclick="cargarContenido('servicios.html')">Servicios</a></li>
+            <li><a href="#" onclick="cargarContenido('contacto.html')">Contacto</a></li>
+        </ul>
+    </nav>
 
-
-
-
-<!-- Contenedor donde se cargará el contenido de la pagina de inicio index.html -->
-<div id="contenido">
-    <section class="hero">
-        <h1>Bienvenidos a OfixHub – Soluciones en Papelería y Tecnología</h1>
-        <p>En <strong>OfixHub</strong>, combinamos lo mejor de una papelería tradicional con servicios tecnológicos innovadores para ofrecerte una experiencia completa y eficiente.</p>
-    </section>
-    
-    <section class="content">
-        <h2 class="section-title">📌 ¿Qué hacemos?</h2>
-        <div class="services-container">
-            <div class="box">
-                <h3>Material de Oficina</h3>
-                <p>Material de oficina y escolares de alta calidad.</p>
-                <a href="#" class="btn">Ver más</a>
+    <!-- Contenedor donde se cargará el contenido de la página de inicio -->
+    <div id="contenido">
+        <section class="hero">
+            <h1>Bienvenidos a OfixHub – Soluciones en Papelería y Tecnología</h1>
+            <p>En <strong>OfixHub</strong>, combinamos lo mejor de una papelería tradicional con servicios tecnológicos innovadores para ofrecerte una experiencia completa y eficiente.</p>
+        </section>
+        
+        <section class="content">
+            <h2 class="section-title">📌 ¿Qué hacemos?</h2>
+            <div class="services-container">
+                <div class="box">
+                    <h3>Material de Oficina</h3>
+                    <p>Material de oficina y escolares de alta calidad.</p>
+                    <a href="#" class="btn">Ver más</a>
+                </div>
+                <div class="box">
+                    <h3>Impresiones y Escaneos</h3>
+                    <p>Impresiones, fotocopias y escaneos rápidos.</p>
+                    <a href="#" class="btn">Ver más</a>
+                </div>
+                <div class="box">
+                    <h3>Diseño Gráfico</h3>
+                    <p>Diseño gráfico y edición de documentos.</p>
+                    <a href="#" class="btn">Ver más</a>
+                </div>
+                <div class="box">
+                    <h3>Asesoría Tecnológica</h3>
+                    <p>Asesoría en tecnología y soporte digital.</p>
+                    <a href="#" class="btn">Ver más</a>
+                </div>
             </div>
-            <div class="box">
-                <h3>Impresiones y Escaneos</h3>
-                <p>Impresiones, fotocopias y escaneos rápidos.</p>
-                <a href="#" class="btn">Ver más</a>
-            </div>
-            <div class="box">
-                <h3>Diseño Gráfico</h3>
-                <p>Diseño gráfico y edición de documentos.</p>
-                <a href="#" class="btn">Ver más</a>
-            </div>
-            <div class="box">
-                <h3>Asesoría Tecnológica</h3>
-                <p>Asesoría en tecnología y soporte digital.</p>
-                <a href="#" class="btn">Ver más</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="hero">
-        <p>Nuestro compromiso es brindarte <strong>soluciones prácticas y asequibles</strong> para que tu día a día sea más productivo. ¡Confía en nosotros para llevar tus ideas al siguiente nivel!</p>
-        <p>📍 <strong>Visítanos o contáctanos</strong> para más información.</p>
-    </section>
-</div>
+        </section>
+        
+        <section class="hero">
+            <p>Nuestro compromiso es brindarte <strong>soluciones prácticas y asequibles</strong> para que tu día a día sea más productivo. ¡Confía en nosotros para llevar tus ideas al siguiente nivel!</p>
+            <p>📍 <strong>Visítanos o contáctanos</strong> para más información.</p>
+        </section>
+    </div>
 
-
-
-
-    <!-- Footer que cambia a botón en móviles -->
+    <!-- Footer -->
     <footer id="footer">
-        <p>© 2025 OfixHub         <a href="https://wa.me/3235871652" class="whatsapp">WhatsApp</a></p>
-        <div class="redes-sociales">
-            <a href="#" target="_blank">🔵 Facebook</a>
-            <a href="#" target="_blank">📸 Instagram</a>
-            <a href="#" target="_blank">🐦 Twitter</a>
-            <a href="#" target="_blank">🎥 YouTube</a>
-        </div>
+        <p>© 2025 OfixHub <a href="https://wa.me/3235871652" class="whatsapp">WhatsApp</a></p>
         <button id="footerBtn" class="footer-btn">Contáctanos</button>
     </footer>
 

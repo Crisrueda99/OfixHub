@@ -3,21 +3,19 @@ body {
     margin: 0;
     padding-top: 50px;
     text-align: center;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #eaf4ea;
+    color: #2c3e50;
 }
-
-
 
 /* Estilos para la barra de navegación */
 nav {
-    background-color: #008cba;
+    background-color: #2e7d32;
     padding: 10px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Asegura que esté por encima del contenido */
+    z-index: 1000;
 }
 
 nav ul {
@@ -40,11 +38,11 @@ nav ul li a {
 
 /* Botón de menú para móviles */
 .toggle-nav {
-    display: none; /* Se oculta en pantallas grandes */
+    display: none;
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #008cba;
+    background-color: #2e7d32;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -57,7 +55,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #1b5e20;
     color: white;
     padding: 10px;
     text-align: center;
@@ -66,7 +64,7 @@ footer {
 /* Botón en el footer para pantallas pequeñas */
 .footer-btn {
     display: none;
-    background-color: #008cba;
+    background-color: #2e7d32;
     color: white;
     border: none;
     padding: 10px;
@@ -77,7 +75,7 @@ footer {
 /* Estilos para pantallas pequeñas */
 @media screen and (max-width: 768px) {
     nav {
-        display: none; /* Ocultar el nav por defecto */
+        display: none;
         flex-direction: column;
         align-items: center;
     }
@@ -91,43 +89,40 @@ footer {
     }
 
     .toggle-nav {
-        display: block; /* Mostrar el botón de menú */
+        display: block;
     }
 
     footer p {
-        display: none; /* Ocultar el texto del footer */
+        display: none;
     }
 
     .footer-btn {
-        display: block; /* Mostrar el botón de footer */
+        display: block;
     }
 }
-
-
-
 
 /* Sección principal */
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background: #f4f4f4;
+    background: #eaf4ea;
 }
 
 .hero h1 {
     font-size: 36px;
-    color: #333;
+    color: #1b5e20;
 }
 
 .hero p {
     font-size: 18px;
-    color: #666;
+    color: #388e3c;
     margin: 15px 0;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background: #007bff;
+    background: #43a047;
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -136,9 +131,8 @@ footer {
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #1b5e20;
 }
-
 
 /* Contenedor de las tarjetas */
 .content {
@@ -147,10 +141,9 @@ footer {
     gap: 20px;
     padding: 40px 20px;
     flex-wrap: wrap;
-    max-width: 1200px; /* Define un ancho máximo */
-    margin: 0 auto; /* Centra el contenedor */
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
 
 .box {
     background: white;
@@ -162,24 +155,24 @@ footer {
 }
 
 .box h2 {
-    color: #333;
+    color: #2e7d32;
     margin-bottom: 10px;
 }
 
 .box p {
-    color: #666;
+    color: #388e3c;
 }
+
 html {
     scroll-behavior: smooth;
 }
-
 
 .section-title {
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
+    color: #1b5e20;
 }
-
 
 /* Asegura que el menú solo se muestre cuando sea necesario */
 #barnav {
