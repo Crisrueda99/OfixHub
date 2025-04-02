@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css">
     <style>
         .servicios-container {
             display: flex;
@@ -25,9 +21,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
         .slider img {
             width: 100%;
             border-radius: 10px;
+            display: none;
+        }
+        .slider img.active {
+            display: block;
         }
     </style>
 </head>
@@ -35,8 +40,8 @@
     <div class="servicios-container">
         <div class="servicio">
             <h2>Diseño Web</h2>
-            <div class="slider">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Desert.png" alt="Desert">
+            <div class="slider" id="slider1">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Desert.png" alt="Desert" class="active">
                 <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Scene.png" alt="Scene">
                 <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Profile.png" alt="Profile">
                 <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Character.png" alt="Character">
@@ -46,8 +51,8 @@
         
         <div class="servicio">
             <h2>Desarrollo de Apps</h2>
-            <div class="slider">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Desert.png" alt="Desert">
+            <div class="slider" id="slider2">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Desert.png" alt="Desert" class="active">
                 <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Scene.png" alt="Scene">
                 <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Profile.png" alt="Profile">
                 <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Character.png" alt="Character">
@@ -57,14 +62,21 @@
     </div>
 
     <script>
-        $(document).ready(function(){
-            $('.slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                adaptiveHeight: true
-            });
+        function iniciarSlider(id) {
+            let slider = document.getElementById(id);
+            let images = slider.getElementsByTagName("img");
+            let index = 0;
+
+            setInterval(() => {
+                images[index].classList.remove("active");
+                index = (index + 1) % images.length;
+                images[index].classList.add("active");
+            }, 3000);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            iniciarSlider("slider1");
+            iniciarSlider("slider2");
         });
     </script>
 </body>
