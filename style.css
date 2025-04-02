@@ -5,6 +5,14 @@ body {
     text-align: center;
     background-color: #eaf4ea;
     color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#contenido {
+    flex: 1;
+    padding-bottom: 20px; /* Asegura espacio para el footer */
 }
 
 /* Botón de menú para móviles */
@@ -92,6 +100,18 @@ body {
 
 .btn:hover {
     background-color: #005f7f;
+}
+
+/* Footer fijo al final */
+footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
 }
 
 /* Responsive */
