@@ -2,14 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleNav = document.getElementById("toggleNav");
     const barnav = document.getElementById("barnav");
     const navLinks = barnav.querySelectorAll("a");
-    const footerBtn = document.getElementById("footerBtn");
 
-    // Función para mostrar u ocultar el menú en móviles
+    // Función para mostrar u ocultar la barra de navegación
     toggleNav.addEventListener("click", function () {
         barnav.classList.toggle("visible");
     });
 
-    // Cerrar menú al hacer clic en un enlace (solo en móviles)
+    // Cerrar el menú al hacer clic en un enlace (solo en móviles)
     navLinks.forEach(link => {
         link.addEventListener("click", function () {
             if (window.innerWidth <= 768) {
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Ajustar la visibilidad del navbar cuando cambia el tamaño de la ventana
+    // Ajustar la visibilidad del navbar al cambiar el tamaño de la ventana
     function ajustarNav() {
         if (window.innerWidth > 768) {
             barnav.classList.add("visible");
@@ -31,14 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ajustarNav();
     window.addEventListener("resize", ajustarNav);
 
-    // Funcionalidad del botón en el footer
-    if (footerBtn) {
-        footerBtn.addEventListener("click", function () {
-            window.location.href = "contacto.html";
-        });
-    }
-
-    // Función para cargar contenido dinámico sin recargar la página
+    // Función para cargar contenido dinámico
     function cargarContenido(pagina) {
         fetch(pagina)
             .then(response => {
@@ -58,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
-            const pagina = this.getAttribute("href");
-            if (pagina && pagina !== "#") {
-                cargarContenido(pagina);
+            const pagina = this.getAttribute("onclick");
+            if (pagina) {
+                cargarContenido(pagina.replace("cargarContenido('", "").replace("')", ""));
             }
         });
     });
