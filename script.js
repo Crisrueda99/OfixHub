@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleNav = document.getElementById("toggleNav");
     const barnav = document.getElementById("barnav");
     const navLinks = barnav.querySelectorAll("a");
+    const footerBtn = document.getElementById("footerBtn");
 
     // Función para mostrar u ocultar el menú en móviles
     toggleNav.addEventListener("click", function () {
@@ -31,20 +32,36 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", ajustarNav);
 
     // Funcionalidad del botón en el footer
-    const footerBtn = document.getElementById("footerBtn");
     if (footerBtn) {
         footerBtn.addEventListener("click", function () {
-            alert("¡Contáctanos al correo: contacto@mipagina.com!");
+            window.location.href = "contacto.html";
         });
     }
-});
 
-// Función para cargar contenido dinámico
-function cargarContenido(pagina) {
-    fetch(pagina)
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("contenido").innerHTML = data;
-    })
-    .catch(error => console.error("Error al cargar el contenido:", error));
-}
+    // Función para cargar contenido dinámico sin recargar la página
+    function cargarContenido(pagina) {
+        fetch(pagina)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Error al cargar la página");
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("contenido").innerHTML = data;
+                window.scrollTo(0, 0); // Desplazar hacia arriba al cargar nuevo contenido
+            })
+            .catch(error => console.error("Error al cargar el contenido:", error));
+    }
+
+    // Asignar la función de carga de contenido a los enlaces del navbar
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const pagina = this.getAttribute("href");
+            if (pagina && pagina !== "#") {
+                cargarContenido(pagina);
+            }
+        });
+    });
+});
