@@ -36,21 +36,64 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* Botón de menú para móviles */
-.toggle-nav {
-    display: none;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #2e7d32;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    cursor: pointer;
+/* Contenedor de contacto */
+.contacto-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer fijo */
+.mapa-container {
+    margin: 20px 0;
+}
+
+.mapa {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #008cba;
+}
+
+/* Formulario */
+.formulario input, .formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario button {
+    background-color: #008cba;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #005f7f;
+}
+
+/* Estilos del footer */
 footer {
     position: fixed;
     bottom: 0;
@@ -58,83 +101,36 @@ footer {
     background-color: #1b5e20;
     color: white;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
 }
 
-/* Botón en el footer para pantallas pequeñas */
-.footer-btn {
-    display: none;
-    background-color: #2e7d32;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
+footer p {
+    margin: 0;
+    padding-left: 15px;
 }
 
-/* Estilos para pantallas pequeñas */
-@media screen and (max-width: 768px) {
-    nav {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .toggle-nav {
-        display: block;
-    }
-
-    footer p {
-        display: none;
-    }
-
-    .footer-btn {
-        display: block;
-    }
-}
-
-/* Sección principal */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: #eaf4ea;
-}
-
-.hero h1 {
-    font-size: 36px;
-    color: #1b5e20;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #388e3c;
-    margin: 15px 0;
-}
-
-.btn {
+/* Botón de WhatsApp */
+.whatsapp {
     display: inline-block;
-    padding: 10px 20px;
-    background: #43a047;
+    background-color: #25D366;
     color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
     text-decoration: none;
     font-size: 18px;
-    border-radius: 5px;
-    margin-top: 10px;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin-right: 15px;
 }
 
-.btn:hover {
-    background: #1b5e20;
+.whatsapp:hover {
+    background-color: #1ebe5d;
 }
 
-/* Contenedor de las tarjetas */
+/* Sección de tarjetas */
 .content {
     display: flex;
     justify-content: center;
@@ -152,6 +148,8 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     text-align: center;
+    flex: 1;
+    min-width: 250px;
 }
 
 .box h2 {
@@ -163,22 +161,24 @@ footer {
     color: #388e3c;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-.section-title {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #1b5e20;
-}
-
-/* Asegura que el menú solo se muestre cuando sea necesario */
-#barnav {
-    display: none;
-}
-
-#barnav.visible {
-    display: block;
+/* Responsive */
+@media screen and (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    .toggle-nav {
+        display: block;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .whatsapp {
+        margin: 10px 0;
+    }
 }
