@@ -24,15 +24,23 @@
         .slider {
             position: relative;
             width: 100%;
+            height: 200px;
             overflow: hidden;
+            border-radius: 10px;
         }
         .slider img {
             width: 100%;
-            border-radius: 10px;
-            display: none;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
         }
         .slider img.active {
-            display: block;
+            opacity: 1;
+            z-index: 2;
         }
     </style>
 </head>
@@ -41,10 +49,10 @@
         <div class="servicio">
             <h2>Diseño Web</h2>
             <div class="slider" id="slider1">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Desert.png" alt="Desert" class="active">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Scene.png" alt="Scene">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Profile.png" alt="Profile">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Character.png" alt="Character">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/main/src/Desert.png" alt="Desert" class="active">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/main/src/Scene.png" alt="Scene">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/main/src/Profile.png" alt="Profile">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/main/src/Character.png" alt="Character">
             </div>
             <p>Creación de sitios web modernos y responsivos.</p>
         </div>
@@ -52,10 +60,10 @@
         <div class="servicio">
             <h2>Desarrollo de Apps</h2>
             <div class="slider" id="slider2">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Desert.png" alt="Desert" class="active">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Scene.png" alt="Scene">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Profile.png" alt="Profile">
-                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/refs/heads/main/src/Character.png" alt="Character">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/main/src/Desert.png" alt="Desert" class="active">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/main/src/Scene.png" alt="Scene">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/main/src/Profile.png" alt="Profile">
+                <img src="https://raw.githubusercontent.com/Crisrueda99/OfixHub/main/src/Character.png" alt="Character">
             </div>
             <p>Aplicaciones móviles intuitivas y funcionales.</p>
         </div>
@@ -64,14 +72,16 @@
     <script>
         function iniciarSlider(id) {
             let slider = document.getElementById(id);
-            let images = slider.getElementsByTagName("img");
+            let images = slider.querySelectorAll("img");
             let index = 0;
 
-            setInterval(() => {
-                images[index].classList.remove("active");
-                index = (index + 1) % images.length;
-                images[index].classList.add("active");
-            }, 3000);
+            if (images.length > 0) {
+                setInterval(() => {
+                    images.forEach(img => img.classList.remove("active"));
+                    index = (index + 1) % images.length;
+                    images[index].classList.add("active");
+                }, 3000);
+            }
         }
 
         document.addEventListener("DOMContentLoaded", function() {

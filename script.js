@@ -2,13 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleNav = document.getElementById("toggleNav");
     const barnav = document.getElementById("barnav");
     const navLinks = barnav.querySelectorAll("a");
+    const contenido = document.getElementById("contenido");
 
-    // Función para mostrar/ocultar la barra de navegación
+    // Mostrar/ocultar la barra de navegación en móviles
     toggleNav.addEventListener("click", function () {
         barnav.classList.toggle("visible");
     });
 
-    // Cerrar el menú en móviles cuando se haga clic en un enlace
+    // Cerrar el menú en móviles al hacer clic en un enlace
     navLinks.forEach(link => {
         link.addEventListener("click", function () {
             if (window.innerWidth <= 768) {
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Ajustar la visibilidad del navbar al cambiar el tamaño de la ventana
+    // Ajustar la visibilidad de la barra de navegación al redimensionar
     function ajustarNav() {
         if (window.innerWidth > 768) {
             barnav.classList.add("visible");
@@ -26,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    ajustarNav();
     window.addEventListener("resize", ajustarNav);
+    ajustarNav();
 
     // Función para cargar contenido dinámico
     window.cargarContenido = function (pagina) {
@@ -39,9 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 return response.text();
             })
             .then(data => {
-                document.getElementById("contenido").innerHTML = data;
+                contenido.innerHTML = data;
                 window.scrollTo(0, 0);
             })
             .catch(error => console.error("Error al cargar el contenido:", error));
     };
+
+    // Cargar la página de inicio automáticamente al abrir index.html
+    cargarContenido("inicio.html");
 });

@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OfixHub</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
     <!-- Botón para mostrar/ocultar la barra de navegación en pantallas pequeñas -->
     <button id="toggleNav" class="toggle-nav">☰ Menú</button>
 
     <!-- Barra de navegación -->
     <nav id="barnav" class="barnav">
         <ul>
-            <li><a href="index.html" onload="cargarContenido('inicio.html')">Sobre Nosotros</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="#" onclick="cargarContenido('nosotros.html')">Sobre Nosotros</a></li>
             <li><a href="#" onclick="cargarContenido('servicios.html')">Servicios</a></li>
             <li><a href="#" onclick="cargarContenido('contacto.html')">Contacto</a></li>
@@ -22,14 +24,13 @@
 
     <!-- Contenedor donde se cargará el contenido -->
     <div id="contenido">
+        <!-- Contenido de inicio se cargará aquí automáticamente -->
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <p>© 2025 OfixHub</p>
-        <a href="https://wa.me/3235871652" class="whatsapp">WhatsApp</a>
+    <!-- Footer pegado al final -->
+    <footer>
+        <p>OfixHub</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
