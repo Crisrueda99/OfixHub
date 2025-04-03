@@ -1,51 +1,69 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleNav = document.getElementById("toggleNav");
-    const barnav = document.getElementById("barnav");
-    const navLinks = barnav.querySelectorAll("a");
-    const contenido = document.getElementById("contenido");
+    // ==============================
+    // VARIABLES Y ELEMENTOS DEL DOM
+    // ==============================
+    const toggleNav = document.getElementById("toggleNav"); // Botón para mostrar/ocultar menú en móviles
+    const barnav = document.getElementById("barnav"); // Barra de navegación
+    const navLinks = barnav.querySelectorAll("a"); // Enlaces dentro de la barra de navegación
+    const contenido = document.getElementById("contenido"); // Contenedor del contenido dinámico
 
-    // Mostrar/ocultar la barra de navegación en móviles
-    toggleNav.addEventListener("click", function () {
+    // ==============================
+    // FUNCIÓN: MOSTRAR/OCULTAR NAV EN MÓVILES
+    // ==============================
+    function toggleMenu() {
         barnav.classList.toggle("visible");
-    });
+    }
+    toggleNav.addEventListener("click", toggleMenu);
 
-    // Cerrar el menú en móviles al hacer clic en un enlace
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            if (window.innerWidth <= 768) {
-                barnav.classList.remove("visible");
-            }
-        });
-    });
-
-    // Ajustar la visibilidad de la barra de navegación al redimensionar
-    function ajustarNav() {
-        if (window.innerWidth > 768) {
-            barnav.classList.add("visible");
-        } else {
+    // ==============================
+    // FUNCIÓN: CERRAR MENÚ EN MÓVILES AL HACER CLIC EN UN ENLACE
+    // ==============================
+    function cerrarMenuMovil() {
+        if (window.innerWidth <= 768) {
             barnav.classList.remove("visible");
         }
     }
+    navLinks.forEach(link => link.addEventListener("click", cerrarMenuMovil));
 
+    // ==============================
+    // FUNCIÓN: AJUSTAR VISIBILIDAD DEL MENÚ SEGÚN EL TAMAÑO DE PANTALLA
+    // ==============================
+    function ajustarNav() {
+        barnav.classList.toggle("visible", window.innerWidth > 768);
+    }
     window.addEventListener("resize", ajustarNav);
-    ajustarNav();
+    ajustarNav(); // Ajustar menú al cargar la página
 
-    // Función para cargar contenido dinámico
+    // ==============================
+    // FUNCIÓN: MARCAR OPCIÓN ACTIVA EN EL MENÚ
+    // ==============================
+    function marcarEnlaceActivo(pagina) {
+        navLinks.forEach(link => link.classList.remove("activo")); // Eliminar activo de todos
+        const enlaceActivo = [...navLinks].find(link => link.getAttribute("href") === pagina);
+        if (enlaceActivo) {
+            enlaceActivo.classList.add("activo"); // Marcar como activo
+        }
+    }
+
+    // ==============================
+    // FUNCIÓN: CARGAR CONTENIDO DINÁMICO SIN RECARGAR LA PÁGINA
+    // ==============================
     window.cargarContenido = function (pagina) {
         fetch(pagina)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error("Error al cargar la página");
-                }
+                if (!response.ok) throw new Error("Error al cargar la página");
                 return response.text();
             })
             .then(data => {
                 contenido.innerHTML = data;
-                window.scrollTo(0, 0);
+                window.scrollTo(0, 0); // Desplazar al inicio tras cargar contenido
+                marcarEnlaceActivo(pagina); // Actualizar el menú activo
             })
             .catch(error => console.error("Error al cargar el contenido:", error));
     };
 
-    // Cargar la página de inicio automáticamente al abrir index.html
+    // ==============================
+    // CARGAR AUTOMÁTICAMENTE LA PÁGINA DE INICIO
+    // ==============================
     cargarContenido("inicio.html");
 });

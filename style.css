@@ -1,8 +1,11 @@
-/* ======= Estilos globales ======= */
+/* ====================================== */
+/* ============ ESTILOS GLOBALES ========= */
+/* ====================================== */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 60px;
+    padding-top: 10%;
     text-align: center;
     background-color: #eaf4ea;
     color: #2c3e50;
@@ -13,10 +16,13 @@ body {
 
 #contenido {
     flex: 1;
-    padding-bottom: 60px; /* Asegura espacio suficiente para el footer */
+    padding-bottom: 60px;
 }
 
-/* ======= Botón de menú para móviles ======= */
+/* ====================================== */
+/* ========== BOTÓN DE MENÚ MÓVIL ========= */
+/* ====================================== */
+
 .toggle-nav {
     display: none;
     background: #2e7d32;
@@ -29,13 +35,17 @@ body {
     top: 10px;
     left: 10px;
     z-index: 1100;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease-in-out;
 }
+
 .toggle-nav:hover {
     transform: scale(1.1);
 }
 
-/* ======= Barra de navegación ======= */
+/* ====================================== */
+/* ========= BARRA DE NAVEGACIÓN ========= */
+/* ====================================== */
+
 .barnav {
     background-color: #2e7d32;
     padding: 10px;
@@ -63,14 +73,33 @@ body {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    transition: border-bottom 0.3s;
+    transition: outline 0.3s ease-in-out;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .barnav ul li a:hover {
-    border-bottom: 2px solid white;
+    outline: 2px solid white;
 }
 
-/* ======= Contenedor principal de tarjetas y formulario ======= */
+
+/* =======Estilo para el logo ======= */
+.logo {
+    width: 20%;
+    
+}
+
+
+/* ======= Estilo para resaltar la opción activa ======= */
+.barnav ul li a.activo {
+    outline: 2px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ====================================== */
+/* === CONTENEDOR PRINCIPAL (Tarjetas y Formulario) === */
+/* ====================================== */
+
 .content {
     display: flex;
     justify-content: center;
@@ -78,21 +107,25 @@ body {
     gap: 20px;
     flex-wrap: wrap;
     padding: 40px 20px;
+    padding-top: 5%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* ======= Tarjetas de contenido ======= */
+/* ====================================== */
+/* ========= TARJETAS DE CONTENIDO ========= */
+/* ====================================== */
+
 .box {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 320px; /* Mantiene consistencia con el formulario */
+    max-width: 320px;
     text-align: center;
     flex: 1;
     min-width: 250px;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s ease-in-out;
     margin-bottom: 20px;
 }
 
@@ -105,9 +138,12 @@ body {
     margin-bottom: 10px;
 }
 
-/* ======= Formulario de contacto ======= */
+/* ====================================== */
+/* ========= FORMULARIO DE CONTACTO ========= */
+/* ====================================== */
+
 .formulario {
-    max-width: 320px; /* Igual a las tarjetas */
+    max-width: 320px;
     flex: 1;
     min-width: 250px;
     padding: 20px;
@@ -138,14 +174,17 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s;
+    transition: background 0.3s ease-in-out;
 }
 
 .formulario button:hover {
     background: #1e5b22;
 }
 
-/* ======= Footer ======= */
+/* ====================================== */
+/* ========== FOOTER ========= */
+/* ====================================== */
+
 footer {
     background: #2e7d32;
     color: white;
@@ -165,7 +204,10 @@ footer p {
     margin: 0;
 }
 
-/* ======= Responsive ======= */
+/* ====================================== */
+/* ========= RESPONSIVE DESIGN ========= */
+/* ====================================== */
+
 @media screen and (max-width: 768px) {
     .toggle-nav {
         display: block;
@@ -190,15 +232,42 @@ footer p {
     .barnav ul li {
         margin: 10px 0;
     }
-    
-    .content {
-        flex-direction: column;
-        align-items: center;
+
+    .logo {
+        width: 70%;
+        padding-left: 5%;
     }
 
-    footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
+
+}
+
+
+
+/* ====================================== */
+/* ========= BOTÓN FLOTANTE DE WHATSAPP ========= */
+/* ====================================== */
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+    z-index: 999;
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
     }
 }
+
+
