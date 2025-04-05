@@ -107,7 +107,7 @@ body {
     gap: 20px;
     flex-wrap: wrap;
     padding: 40px 20px;
-    padding-top: 5%;
+    padding-top: 2%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -270,4 +270,97 @@ footer p {
     }
 }
 
+/* ====================================== */
+/* ========== POPUP PERSONALIZADO ========== */
+/* ====================================== */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
 
+.popup-content {
+    background-color: white;
+    padding: 25px 35px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    color: #2c3e50;
+    font-size: 18px;
+    animation: popupFade 0.3s ease;
+}
+
+.popup-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #2e7d32;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.popup-content button:hover {
+    background-color: #1e5b22;
+}
+
+@keyframes popupFade {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* ====================================== */
+/* ========== ANIMACIONES DE CARGA PENDIENTE ========== */
+/* ====================================== */
+
+
+/* ====================================== */
+/* ========== BOTONES DE REDES SOCIALES ========== */
+/* ====================================== */
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.social-buttons a {
+    color: white;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-buttons a:hover {
+    transform: scale(1.1);
+}
+
+a.facebook   { background: #3b5998; }
+a.instagram  { background: #e4405f; }
+a.whatsapp   { background: #25d366; }
+a.twitter    { background: #1da1f2; }
+a.linkedin   { background: #0077b5; }
+a.youtube    { background: #ff0000; }
+a.tiktok     { background: #000000; }
+a.telegram   { background: #0088cc; }
+a.pinterest  { background: #bd081c; }
+a.threads    { background: #121212; }

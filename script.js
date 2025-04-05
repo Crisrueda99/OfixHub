@@ -67,3 +67,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==============================
     cargarContenido("inicio.html");
 });
+
+
+
+// ==============================
+// CÓDIGO PARA EL FORMULARIO DE CONTACTO
+// ==============================
+
+function enviarFormulario() {
+    const form = document.getElementById('form-google');
+    const popup = document.getElementById('popup');
+    const okButton = document.getElementById('popup-ok');
+
+    form.submit(); // Enviar a Google Forms
+    popup.style.display = 'flex'; // Mostrar popup
+
+    okButton.onclick = () => {
+        popup.style.display = 'none'; // Ocultar popup
+        form.reset(); // Limpiar formulario
+    };
+}
