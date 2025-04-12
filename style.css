@@ -91,6 +91,10 @@ body {
 
 .logo {
     width: 20%;
+    background-color: #c5c5c554;
+    border-radius: 10px;
+    margin-bottom: 1%;
+
 }
 
 /* ====================================== */
