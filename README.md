@@ -1,102 +1,62 @@
-🧹 OfixHub – Soluciones en Papelería y Tecnología
 
-Bienvenido al repositorio oficial de OfixHub, una plataforma web que combina lo mejor de una papelería tradicional con servicios tecnológicos innovadores. Este sitio está diseñado para brindar una experiencia moderna, intuitiva y eficiente a nuestros clientes.
+---
 
-🌐 Sitio Web
+## 🧹 OfixHub – Soluciones en Papelería y Tecnología
 
-El sitio está compuesto por las siguientes páginas:
+**OfixHub** es una plataforma web que integra papelería tradicional con servicios tecnológicos, brindando una experiencia moderna, intuitiva y eficiente.
 
-index.html – Página principal
+---
 
-inicio.html – Bienvenida e introducción
+### 🌐 Estructura del Sitio
 
-nosotros.html – Información sobre la empresa
+- `index.html` – Página principal  
+- `inicio.html` – Introducción  
+- `nosotros.html` – Sobre la empresa  
+- `servicios.html` – Nuestros servicios  
+- `contacto.html` – Formulario de contacto  
+- `guardar.php` – Procesamiento del formulario  
+- `style.css` – Estilos globales  
+- `script.js` – Funcionalidad interactiva  
 
-servicios.html – Detalles de nuestros servicios
+📁 Carpeta `src/`: contiene imágenes y recursos gráficos.
 
-contacto.html – Formulario y medios de contacto
+---
 
-guardar.php – Manejo del formulario de contacto
+### 📌 Servicios
 
-style.css – Estilos globales
+- **Material de Oficina:** Suministros escolares y de oficina.  
+- **Impresiones y Escaneos:** Fotocopias, impresiones y digitalizaciones.  
+- **Diseño Gráfico:** Creación y edición de contenido visual.  
+- **Asesoría Tecnológica:** Soporte técnico y consultoría digital.
 
-script.js – Funcionalidad interactiva
+---
 
-📌 ¿Qué hacemos?
+### 📲 Redes Sociales
 
-Ofrecemos una amplia variedad de servicios:
+Síguenos para estar al tanto de novedades:  
+Facebook · Instagram · WhatsApp · X · LinkedIn · YouTube · TikTok · Telegram · Pinterest · Threads
 
-Material de OficinaSuministros escolares y de oficina de alta calidad.
+---
 
-Impresiones y EscaneosFotocopias, impresiones y escaneos de forma rápida y eficiente.
+### 🚀 ¿Cómo contribuir?
 
-Diseño GráficoEdición y creación de documentos visuales con enfoque profesional.
+1. Haz fork del repositorio  
+2. Crea una rama: `git checkout -b mi-feature`  
+3. Haz commit: `git commit -m "Agrega nueva funcionalidad"`  
+4. Sube la rama: `git push origin mi-feature`  
+5. Abre un Pull Request
 
-Asesoría TecnológicaSoporte técnico, soluciones digitales y consultoría personalizada.
+---
 
-📁 Estructura del Proyecto
+### 🧑‍💻 Autor
 
-OfixHub/
-│
-├── index.html
-├── inicio.html
-├── nosotros.html
-├── servicios.html
-├── contacto.html
-├── guardar.php
-├── style.css
-├── script.js
-├── README.md
-│
-└── src/
-    ├── OfixHub_Barner.png
-    ├── OfixHub_ico.png
-    ├── Whatsapp.png
-    ├── Character.png
-    ├── Desert.png
-    ├── Profile.png
-    └── Scene.png
+Desarrollado por el equipo de **OfixHub**  
+📧 Contacto: [ofixhub@gmail.com](mailto:ofixhub@gmail.com)
 
-📲 Redes Sociales
+---
 
-Síguenos en nuestras plataformas digitales para mantenerte al tanto de novedades y promociones:
+### ⚖️ Licencia
 
-Facebook
+Uso interno o personal. Para usos comerciales, contáctanos.
 
-Instagram
-
-WhatsApp
-
-X (Twitter)
-
-LinkedIn
-
-YouTube
-
-TikTok
-
-Telegram
-
-Pinterest
-
-Threads
-
-🚀 ¿Cómo contribuir?
-
-Haz un fork del repositorio
-
-Crea una nueva rama: git checkout -b mi-feature
-
-Realiza tus cambios y haz commit: git commit -m "Agrega nueva funcionalidad"
-
-Sube la rama: git push origin mi-feature
-
-Abre un Pull Request ✨
-
-🧑‍💻 Autor
-
-Desarrollado por el equipo de OfixHub📧 Contacto: ofixhub@gmail.com
-
-⚖️ Licencia
-
-Este proyecto se distribuye bajo una licencia de uso interno o personal. Para usos comerciales o distribución, por favor contacta al equipo de OfixHub.
+---
