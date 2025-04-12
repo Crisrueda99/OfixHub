@@ -16,6 +16,8 @@ servicios.html – Detalles de nuestros servicios
 
 contacto.html – Formulario y medios de contacto
 
+guardar.php – Manejo del formulario de contacto
+
 style.css – Estilos globales
 
 script.js – Funcionalidad interactiva
@@ -41,6 +43,7 @@ OfixHub/
 ├── nosotros.html
 ├── servicios.html
 ├── contacto.html
+├── guardar.php
 ├── style.css
 ├── script.js
 ├── README.md

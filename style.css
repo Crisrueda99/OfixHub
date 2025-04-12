@@ -7,8 +7,8 @@ body {
     margin: 0;
     padding-top: 10%;
     text-align: center;
-    background-color: #eaf4ea;
-    color: #2c3e50;
+    background-color: #e8f5e9;  /* Verde claro */
+    color: #1b5e20;  /* Texto verde oscuro */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -20,12 +20,12 @@ body {
 }
 
 /* ====================================== */
-/* ========== BOTÓN DE MENÚ MÓVIL ========= */
+/* ========= BOTÓN DE MENÚ MÓVIL ========= */
 /* ====================================== */
 
 .toggle-nav {
     display: none;
-    background: #2e7d32;
+    background: #c1c1c166;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -47,7 +47,7 @@ body {
 /* ====================================== */
 
 .barnav {
-    background-color: #2e7d32;
+    background-color: #388e3c;
     padding: 10px;
     position: fixed;
     top: 0;
@@ -70,30 +70,27 @@ body {
 }
 
 .barnav ul li a {
-    color: white;
     text-decoration: none;
-    font-size: 18px;
-    transition: outline 0.3s ease-in-out;
-    padding: 5px 10px;
+    color: white;
+    padding: 8px 12px;
     border-radius: 5px;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    background-color: #81c784;
 }
 
-.barnav ul li a:hover {
-    outline: 2px solid white;
+.barnav ul li a:hover,
+.barnav ul li a.activo {
+    background-color: #388e3c;
+    border-color: #2e7d32;
 }
 
+/* ====================================== */
+/* ======= ESTILO PARA EL LOGO ======= */
+/* ====================================== */
 
-/* =======Estilo para el logo ======= */
 .logo {
     width: 20%;
-    
-}
-
-
-/* ======= Estilo para resaltar la opción activa ======= */
-.barnav ul li a.activo {
-    outline: 2px solid #ffffff;
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ====================================== */
@@ -117,7 +114,7 @@ body {
 /* ====================================== */
 
 .box {
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -134,7 +131,7 @@ body {
 }
 
 .box h3 {
-    color: #2e7d32;
+    color: #388e3c;
     margin-bottom: 10px;
 }
 
@@ -148,7 +145,7 @@ body {
     min-width: 250px;
     padding: 20px;
     padding-right: 40px;
-    background: white;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -167,7 +164,7 @@ body {
 }
 
 .formulario button {
-    background: #2e7d32;
+    background: #388e3c;
     color: white;
     border: none;
     padding: 10px;
@@ -178,7 +175,7 @@ body {
 }
 
 .formulario button:hover {
-    background: #1e5b22;
+    background: #2e7d32;
 }
 
 /* ====================================== */
@@ -186,7 +183,7 @@ body {
 /* ====================================== */
 
 footer {
-    background: #2e7d32;
+    background: #388e3c;
     color: white;
     display: flex;
     justify-content: center;
@@ -237,11 +234,7 @@ footer p {
         width: 70%;
         padding-left: 5%;
     }
-
-
 }
-
-
 
 /* ====================================== */
 /* ========= BOTÓN FLOTANTE DE WHATSAPP ========= */
@@ -273,6 +266,7 @@ footer p {
 /* ====================================== */
 /* ========== POPUP PERSONALIZADO ========== */
 /* ====================================== */
+
 .popup {
     position: fixed;
     top: 0;
@@ -293,7 +287,7 @@ footer p {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     max-width: 90%;
-    color: #2c3e50;
+    color: #1b5e20;
     font-size: 18px;
     animation: popupFade 0.3s ease;
 }
@@ -301,7 +295,7 @@ footer p {
 .popup-content button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #2e7d32;
+    background-color: #388e3c;
     border: none;
     color: white;
     font-size: 16px;
@@ -311,18 +305,20 @@ footer p {
 }
 
 .popup-content button:hover {
-    background-color: #1e5b22;
+    background-color: #2e7d32;
 }
 
 @keyframes popupFade {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-
-/* ====================================== */
-/* ========== ANIMACIONES DE CARGA PENDIENTE ========== */
-/* ====================================== */
 
 
 /* ====================================== */
