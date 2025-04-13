@@ -1,0 +1,370 @@
+/* ====================================== */
+/* ============ ESTILOS GLOBALES ========= */
+/* ====================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 10%;
+    text-align: center;
+    background-color: #e8f5e9;  /* Verde claro */
+    color: #1b5e20;  /* Texto verde oscuro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#contenido {
+    flex: 1;
+    padding-bottom: 60px;
+}
+
+/* ====================================== */
+/* ========= BOTÓN DE MENÚ MÓVIL ========= */
+/* ====================================== */
+
+.toggle-nav {
+    display: none;
+    background: #c1c1c166;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    transition: transform 0.2s ease-in-out;
+}
+
+.toggle-nav:hover {
+    transform: scale(1.1);
+}
+
+/* ====================================== */
+/* ========= BARRA DE NAVEGACIÓN ========= */
+/* ====================================== */
+
+.barnav {
+    background-color: #388e3c;
+    padding: 1%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.barnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.barnav ul li {
+    margin: 0 15px;
+}
+
+.barnav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    background-color: #81c784;
+}
+
+.barnav ul li a:hover {
+    background-color: #ffffff54 !important;
+    border-color: #ffffff23 !important;
+}
+.barnav ul li a.activo {
+    background-color: #b9b9b94f;
+    border-color: #ffffff7a;
+}
+
+/* ====================================== */
+/* ======= ESTILO PARA EL LOGO ======= */
+/* ====================================== */
+
+.logo {
+    width: 20%;
+    background-color: #c5c5c554;
+    border-radius: 10px;
+    margin-bottom: 1%;
+
+}
+
+/* ====================================== */
+/* === CONTENEDOR PRINCIPAL (Tarjetas y Formulario) === */
+/* ====================================== */
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    padding-top: 2%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ====================================== */
+/* ========= TARJETAS DE CONTENIDO ========= */
+/* ====================================== */
+
+.box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    transition: box-shadow 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.box:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.box h3 {
+    color: #388e3c;
+    margin-bottom: 10px;
+}
+
+/* ====================================== */
+/* ========= FORMULARIO DE CONTACTO ========= */
+/* ====================================== */
+
+.formulario {
+    max-width: 320px;
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    padding-right: 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formulario button {
+    background: #388e3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.formulario button:hover {
+    background: #2e7d32;
+}
+
+/* ====================================== */
+/* ========== FOOTER ========= */
+/* ====================================== */
+
+footer {
+    background: #388e3c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ====================================== */
+/* ========= RESPONSIVE DESIGN ========= */
+/* ====================================== */
+
+@media screen and (max-width: 768px) {
+    .toggle-nav {
+        display: block;
+    }
+
+    .barnav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barnav.visible {
+        display: flex;
+    }
+
+    .barnav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .barnav ul li {
+        margin: 3% 0;
+    }
+
+    .logo {
+        width: 70%;
+        padding-left: 5%;
+    }
+}
+
+/* ====================================== */
+/* ========= BOTÓN FLOTANTE DE WHATSAPP ========= */
+/* ====================================== */
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+    z-index: 999;
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-icon:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ====================================== */
+/* ========== POPUP PERSONALIZADO ========== */
+/* ====================================== */
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 25px 35px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    color: #1b5e20;
+    font-size: 18px;
+    animation: popupFade 0.3s ease;
+}
+
+.popup-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #388e3c;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.popup-content button:hover {
+    background-color: #2e7d32;
+}
+
+@keyframes popupFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ====================================== */
+/* ========== BOTONES DE REDES SOCIALES ========== */
+/* ====================================== */
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.social-buttons a {
+    color: white;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-buttons a:hover {
+    transform: scale(1.1);
+}
+
+a.facebook   { background: #3b5998; }
+a.instagram  { background: #e4405f; }
+a.whatsapp   { background: #25d366; }
+a.twitter    { background: #1da1f2; }
+a.linkedin   { background: #0077b5; }
+a.youtube    { background: #ff0000; }
+a.tiktok     { background: #000000; }
+a.telegram   { background: #0088cc; }
+a.pinterest  { background: #bd081c; }
+a.threads    { background: #121212; }
+a.github     { background: #333333; }
